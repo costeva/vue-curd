@@ -1,42 +1,55 @@
 <template >
-<div>
+  <div>
     <div class="row">
-    
-    <div class="col s12 m6">
-    <Card :data="proyectos"></Card> 
+      <div class="col s12 m6">
+        <Card v-for="(proyecto,i) in proyectos" :key="i" :data="proyecto" />
+      </div>
     </div>
   </div>
-    </div>
 </template>
-<script>
-import Card from '@/components/Card.vue';
 
-import axios from 'axios';
+<script>
+import Card from "./Card.vue";
+
+import axios from "axios";
 
 export default {
-    components: {
-        Card
-    },
-    data() {
-        return {
-            proyectos:null,
-        }
-    },
-    mounted() {
-        this.getProyectos ();
+  components: {
+    Card,
+  },
+
+  data: () => ({
+    proyectos: [],
+  }),
+
+  mounted() {
+    this.getProyectos();
+  },
+
+  methods: {
+    async getProyectos() {
+      const res = await fetch(
+        "https://crud-vue-11b7f-default-rtdb.firebaseio.com/Proyectos.json"
+      );
+
+      
+      
+      const data = await res.json();
+
+     for (const i in data) {
+        
+        this.proyectos.push(data[i]);
+      }
+
+
+    
+
+    
     },
 
-    methods: {
-      async getProyectos() {
-         await  axios.get('https://crud-vue-11b7f-default-rtdb.firebaseio.com/Proyectos/proyecto.json')
-            .then(response => {
-                this.proyectos=response.data;
-                console.log(response.data);
-            })
-            .catch(error => {
-                console.log(error);
-            })
-        }
-    },
-}
+  
+
+
+  },
+};
 </script>
