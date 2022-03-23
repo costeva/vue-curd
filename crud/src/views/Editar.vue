@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <router-link class="btn" to="/proyectos">Volver</router-link>
-      <form class="col s12" @submit.prevent="registProyectos">
+      <form class="col s12" @submit.prevent="patcEdit">
         <div class="row">
           <div class="input-field col s12">
             <input
@@ -126,11 +126,10 @@
             name="action"
           >
             Submit
-            <i class="material-icons right">send</i>
+            <i class="material-icons right">Actualizar</i>
           </button>
         </div>
       </form>
-      {{ project }}
     </div>
   </div>
 </template>
@@ -140,32 +139,31 @@ export default {
   data() {
     return {
       /* creamos el objeto */
-      project: {
-        nombre: "",
-        descripcion: "",
-        tecnologias: [],
-        status: true,
-      },
+      project: {},
     };
   },
 
-  methods: {
-    async registProyectos() {
-      const res = await axios.post(
-        "https://crud-vue-11b7f-default-rtdb.firebaseio.com/Proyectos.json",this.project
-      );
-      this.$router.push("/proyectos");
+  mounted() {
+    this.getEdit();
+  },
 
-      /* const res = await fetch(
-        "https://crud-vue-11b7f-default-rtdb.firebaseio.com/Proyectos.json",
-        {
-            method: "POST",
-            /*paraque lo puedamandar a la base, lo mandamos en el body y lo stringifyas. */
-      /*   body: JSON.stringify(this.project), */
+  methods: {
+
+   async getEdit(){
+      const id = this.$route.params.id;
+
+     const res = await axios.get(`https://crud-vue-11b7f-default-rtdb.firebaseio.com/Proyectos/${id}.json`);
+      this.project = res.data;
     },
+   
+    async patcEdit(){
+      const id = this.$route.params.id;
+      const res = await axios.put(`https://crud-vue-11b7f-default-rtdb.firebaseio.com/Proyectos/${id}.json`, this.project);
+      this.$router.push('/proyectos');
+    },
+ 
   },
 };
 
-/* Agregar los v-model a los check-box*/
-/*Crea hoja de styles con efecto neon para los input y tmb para los iconos.*/
+
 </script>

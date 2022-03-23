@@ -2,7 +2,7 @@
   <div>
     <div class="row">
       <div class="col s12 m6">
-        <Card v-for="(proyecto,i) in proyectos" :key="i" :data="proyecto" />
+        <Card  v-for="(proyecto,i) in proyectos" :key="i" :data="proyecto"  />
       </div>
     </div>
   </div>
@@ -38,7 +38,10 @@ export default {
 
      for (const i in data) {
         
-        this.proyectos.push(data[i]);
+        this.proyectos.push( {
+          id:i,
+          data:data[i]
+        } );
       }
 
 
