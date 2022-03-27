@@ -1,7 +1,8 @@
 <template>
-  <div>
-  
-<logIn/>   
+  <div  class="container ">
+      
+<logIn @login="loginEmit"/>   
+
   </div>
 </template>
 <script>
@@ -12,6 +13,9 @@ export default {
   },
  
     methods:{
+        loginEmit(user){
+            this.$emit('login',user);
+        }
     
     
     }

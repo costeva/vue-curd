@@ -1,33 +1,38 @@
 <template>
     <div>
-<nav>
+<nav class="nav">
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
       <li>
-      <router-link to="/">Home</router-link>
+      <router-link class="roterColor"  v-if="!sesion" to="/">Registro</router-link>
       </li>
       <li>
-      <router-link to="/login">Login</router-link>
+      <router-link class="roterColor" v-if="!sesion" to="/login">Login</router-link>
       </li>
       <li>
-      <router-link class="waves-effect waves-light btn" to="/proyectos">Proyectos</router-link>
+      <router-link v-if="sesion" class="waves-effect waves-light btn neon__purple" to="/proyectos">Proyectos</router-link>
       </li>
-
+<li>
+      <router-link @click="cerrarSesion" v-if="sesion" class="waves-effect waves-light btn neon__purple" to="/">Cerrar Sesion</router-link>
+      </li>
       </ul>
     </div>
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
   <li>
-   <router-link to="/">Registro</router-link>
+   <router-link class="roterColor" v-if="!sesion" to="/">Registro</router-link>
    </li>
   <li>
-  <router-link to="/login">Login</router-link>
+  <router-link class="roterColor" v-if="!sesion" to="/login">Login</router-link>
   </li>
    <li>
-      <router-link  to="/proyectos">Proyectos</router-link>
+      <router-link class="roterColor" v-if="sesion"  to="/proyectos">Proyectos</router-link>
+      </li>
+
+      <li>
+      <router-link @click="cerrarSesion" v-if="sesion" class="waves-effect waves-light  btn neon__purple" to="/">Cerrar Sesion</router-link>
       </li>
   </ul>
           
@@ -35,18 +40,30 @@
 </template>
 <script>
 export default {
-    name: 'navbar',
-    data() {
-        return {
-            
-        }
+  props: ['sesion'],
 
+    name: 'navbar',
       
+
+
+methods: {
+    cerrarSesion() {
+    localStorage.removeItem("user");
+    this.$emit('login', false);
+      this.$router.push("/");
     },
+
+    
+
+    
+  },
 
     mounted() {
       M.AutoInit();
+      
+      
     },
-    
+
+
 }
 </script>

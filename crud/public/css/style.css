@@ -1,7 +1,231 @@
-.cent{
- text-align: center;
- display: flex;
- flex: none;
+body{
+    background-color: #1a0321;
+    color: #fff;
+}
+
+
+
+.nav{
+    
+        color: #1a0321 !important;;
+        background-color: #fff!important;
+      
+ 
+}
+
+av i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons{
+    color: #ff00ffcc !important;
+}
+
+.card-panel{
+    background-color: #191c29!important;
+    
+}
+
+.formTop{
+margin: 100px auto;
+}
+
+
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+  
+  :root {
+    --form-height: 65vh;
+    --form-width: calc(var(--form-height) / 1.5);
+    --neon-main: #F7F3F7;
+    --neon-shadow: #99D2D0;
+    --neon-main-glitch: #F7F3F7c2;
+    --neon-text-glitch: #F7F3F788;
+    --neon-shadow-glitch: rgba(153, 210, 208, 0.76);
+  }
+  
+  
+  .form {
+    background: #191c29; 
+    padding: 3px;
+    position: relative;
+    border-radius: 6px;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5em;
+    color: #fff;
+
+  }
+  
+  
+  
+  .form::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+      position: absolute;
+      z-index: -1;
+      top: -1%;
+      left: -2%;
+      animation: spin 2.5s linear infinite;
+  }
+  
+  
+  
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+
+
+  
+  .neon__purple {
+    --neon-shadow: #ff00ff;
+    --neon-shadow-glitch: #ff00ffcc;
+  }
+
+  .input-field .prefix.active {
+    color: #ff00ff !important;
+  }
+
+  label {
+    font-weight: 500;
+    color: white !important;
+    padding: 0px 5px 0px 5px;
+    
+  }
+
+  
+  [type="checkbox"].filled-in:checked + span:not(.lever):after {
+     
+      background-color: #ff00ffcc !important;
+      z-index: 0;
+
+ }
+
+  input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea, [type="checkbox"].filled-in:not(:checked) + span:not(.lever):after {
+    border-radius: 5px!important;
+    border: none;
+    box-shadow: 0px 0px 15px 4px ;
+    border: 3px solid var(--neon-main) !important;
+    background-color: transparent !important;
+    color: var(--neon-main) !important;
+    outline: none !important; 
+    animation: neon-input-glitch 3s steps(1) infinite !important;
+  }
+  
+  .input:focus {
+    box-shadow: 0px 0px 25px 10px var(--neon-shadow), inset 0px 0px 15px 7px var(--neon-shadow)!important;
+    animation: none !important;
+  }
+  
+  .neon-input_disabled {
+    box-shadow: 0px 0px 2px 1px var(--neon-shadow-glitch), inset 0px 0px 2px 1px var(--neon-shadow-glitch);
+    animation: none;
+    border: 3px solid var(--neon-main-glitch);
+  }
+  
+  @keyframes neon-input-glitch {
+    0% {
+      box-shadow: 0px 0px 15px 4px var(--neon-shadow), inset 0px 0px 15px 4px var(--neon-shadow);    
+    }
+    
+    85% {
+      box-shadow: 0px 0px 15px 4px var(--neon-shadow), inset 0px 0px 15px 4px var(--neon-shadow);
+    }
+    
+    90% {
+      box-shadow: 0px 0px 10px 4px var(--neon-shadow-glitch), inset 0px 0px 10px 4px var(--neon-shadow-glitch);
+    }
+    
+    100% {
+      box-shadow: 0px 0px 15px 4px var(--neon-shadow), inset 0px 0px 15px 4px var(--neon-shadow);
+    }
+  }
+  
+  .btn {
+      background-color: #a945c7!important;
+      border: 3px solid var(--neon-shadow) !important;
+  }
+
+  .btn:hover {
+      background-color: #a945c7!important;
+      box-shadow: 0 0 10px #a945c7, 0 0 40px #a945c7, 0 0 80px #a945c7!important;
+      transition-delay: 1s;
+  }
+
+  .btn-neon {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    color: #fff;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 24px;
+    overflow: hidden;
+    transition: 0.2s;
+    cursor: pointer;
 }
+
+.roterColor{
+    color: #ff00ffcc !important;
+} 
+
+
+@keyframes neon-sub-line {
+    0%{
+        left: 0;
+        width: 0;
+    }
+
+    49%{
+        width: 100%;
+    }
+    50%{
+        right: 0;
+        width: 100%;
+    }
+    100%{
+        width: 0;
+        right: 0;
+    }    
+}
+header{
+  display:flex;
+  
+}
+.neon-sub-line {
+  position: relative;
+  
+  font-family: "Arial", sans-serif;
+  text-transform: uppercase;
+  display: block;
+}
+.neon-sub-line::before {
+  position: absolute;
+  bottom: -5px;
+  content: " ";
+  display: block;
+  background-color: #FF05BC;
+  width: 100%;
+  height: 3px;
+  animation: neon-sub-line 5s infinite alternate ease-in-out;
+  box-shadow: 0px 0px 10px 3px #ff05bc;
+}
+
+
+       .row .col.m2{
+           width: 100%!important;
+       }
+  

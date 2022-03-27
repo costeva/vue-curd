@@ -1,8 +1,10 @@
 <template >
   <div>
     <div class="row">
+    
       <div class="col s12 m6">
-        <Card  v-for="(proyecto,i) in proyectos" :key="i" :data="proyecto"  />
+      
+        <Card @eliminar="deleteCard"  v-for="(proyecto,i) in proyectos" :key="i" :data="proyecto"  />
       </div>
     </div>
   </div>
@@ -28,11 +30,11 @@ export default {
 
   methods: {
     async getProyectos() {
-      const res = await fetch(
-        "https://crud-vue-11b7f-default-rtdb.firebaseio.com/Proyectos.json"
-      );
-
+      const user = JSON.parse(localStorage.getItem("user"));
       
+      const res = await fetch(
+        `https://crud-vue-11b7f-default-rtdb.firebaseio.com/Proyectos/${user.localId}.json?auth=${user.idToken}`
+      );
       
       const data = await res.json();
 
@@ -43,11 +45,10 @@ export default {
           data:data[i]
         } );
       }
+    },
 
-
-    
-
-    
+    deleteCard(id) {
+      this.proyectos = this.proyectos.filter((proyecto) => proyecto.id !== id);
     },
 
   

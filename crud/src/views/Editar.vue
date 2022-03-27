@@ -1,6 +1,8 @@
 <template >
   <div class="container">
     <div class="row">
+    <h2 class=" neon-sub-line">Editar Proyecto</h2>
+    <hr/>
       <router-link class="btn" to="/proyectos">Volver</router-link>
       <form class="col s12" @submit.prevent="patcEdit">
         <div class="row">
@@ -11,7 +13,7 @@
               type="text"
               class="validate"
             />
-            <label for="nombre">Nombre Proyecto</label>
+            
           </div>
           <div class="input-field col s12">
             <input
@@ -20,7 +22,7 @@
               type="text"
               class="validate"
             />
-            <label for="descripcion">Descripción</label>
+            
           </div>
           <div>
             <p>
@@ -150,15 +152,17 @@ export default {
   methods: {
 
    async getEdit(){
+     const user = JSON.parse(localStorage.getItem('user'));
       const id = this.$route.params.id;
 
-     const res = await axios.get(`https://crud-vue-11b7f-default-rtdb.firebaseio.com/Proyectos/${id}.json`);
+     const res = await axios.get(`https://crud-vue-11b7f-default-rtdb.firebaseio.com/Proyectos/${user.localId}/${id}.json?auth=${user.idToken}`);
       this.project = res.data;
     },
    
     async patcEdit(){
+        const user = JSON.parse(localStorage.getItem('user'));
       const id = this.$route.params.id;
-      const res = await axios.put(`https://crud-vue-11b7f-default-rtdb.firebaseio.com/Proyectos/${id}.json`, this.project);
+      const res = await axios.put(`https://crud-vue-11b7f-default-rtdb.firebaseio.com/Proyectos/${user.localId}/${id}.json?auth=${user.idToken}`, this.project);
       this.$router.push('/proyectos');
     },
  
