@@ -3,7 +3,7 @@
          <div class="card blue-grey darken-1" v-if="data.data.status" >
         <div class="card-content white-text">
           <span class="card-title">{{data.data.nombre}}</span>
-          <p>{{data.data.descripcion}} <a href="#">Ingresa al proyecto</a></p>
+          <p>{{data.data.descripcion}} <a :href="data.data.url" target='_blank'>Ingresa al proyecto</a></p>
            <div>
         <span v-for="(tecnologias,index) in data.data.tecnologias" :key="index" >{{index < data.data.tecnologias.length-1?`${tecnologias.toUpperCase()}, `: tecnologias.toUpperCase()}}</span> 
         </div>

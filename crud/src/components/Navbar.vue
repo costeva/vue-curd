@@ -8,7 +8,7 @@
       <router-link class="roterColor"  v-if="!sesion" to="/">Registro</router-link>
       </li>
       <li>
-      <router-link class="roterColor" v-if="!sesion" to="/login">Login</router-link>
+      <router-link class="roterColor" v-if="!sesion" to="/login">Ingresar</router-link>
       </li>
       <li>
       <router-link v-if="sesion" class="waves-effect waves-light btn neon__purple" to="/proyectos">Proyectos</router-link>

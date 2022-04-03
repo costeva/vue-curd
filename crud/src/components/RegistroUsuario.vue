@@ -43,7 +43,7 @@
             </div>
             <p class="right">
               ¿Tenés cuenta?
-              <a href="/login" class="modal-trigger">login</a>
+             <router-link to="/login">Ingresar</router-link>
             </p>
             <button class="btn neon__purple left col s12" type="submit" name="action">
               Registrame <i class="material-icons right">send</i>

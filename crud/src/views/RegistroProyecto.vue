@@ -24,6 +24,15 @@
             />
             <label for="descripcion">Descripción</label>
           </div>
+          <div class="input-field col s12">
+            <input
+              id="url"
+              v-model="project.url"
+              type="text"
+              class="validate neon-input neon-input_disabled neon__purple "
+            />
+            <label for="nombre">url del proyecto</label>
+          </div>
           <div>
             <p>
               <label>
@@ -147,6 +156,7 @@ export default {
       project: {
         nombre: "",
         descripcion: "",
+        url: "",
         tecnologias: [],
         status: true,
        

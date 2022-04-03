@@ -6,7 +6,7 @@
         <form class="" @submit.prevent="validarLogin">
           <div class="form form-panel z-depth-5">
             <h5 class="center neon-sub-line">Login</h5>
-            <p class="center">Ingrese las datos correspondientes!</p>
+            <p class="center">Ingrese los datos correspondientes!</p>
 
             <div class="input-field ul">
               <i class="material-icons prefix button-icon-rotate email">email</i>

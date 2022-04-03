@@ -24,6 +24,14 @@
             />
             
           </div>
+          <div class="input-field col s12">
+            <input
+              id="url"
+              v-model="project.url"
+              type="text"
+              class="validate"
+            />
+            </div>
           <div>
             <p>
               <label>
