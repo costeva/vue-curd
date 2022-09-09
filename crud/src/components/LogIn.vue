@@ -1,38 +1,30 @@
 <template>
-  <div>
-    <div class="row formTop">
-      <div class="col l3 m3 s12 "></div>
-      <div class="col l6 m6 s12 ">
-        <form class="" @submit.prevent="validarLogin">
-          <div class="form form-panel z-depth-5">
-            <h5 class="center neon-sub-line">Login</h5>
-            <p class="center">Ingrese los datos correspondientes!</p>
+ <div>
+ <div class="form card-panel z-depth-5">
+          <h5 class="center neon-sub-line">Login</h5>
+            <p class="center">¡Ingrese los datos!</p>
+    <form class="row formTop"  @submit.prevent="validarLogin">
 
-            <div class="input-field ul">
-              <i class="material-icons prefix button-icon-rotate email">email</i>
-              <input
-                v-model.trim="email"
-                type="email"
-                name="email"
-                class="validate neon-input neon-input_disabled neon__purple"
-              />
-              <label>Ingrese su email</label>
-            </div>
+ <div class="col-12 ftcAlto input-field ul " >
+    <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
+    <div class="input-group">
+      <div class="input-group-text"><i class="material-icons  col-form-label">email</i></div>
+      <input v-model.trim="email" type="email" class="form-control validate neon-input neon-input_disabled neon__purple" id="inputEmail3" placeholder="Email">
+    </div>
+  </div>
 
-            <div class="input-field ul">
-              <i class="material-icons prefix">lock</i>
-              <input class="neon-input neon-input_disabled neon__purple" v-model.trim="pass" type="password" name="pass" />
-              <label>Ingrese el password</label>
-            </div>
 
-            <button class="btn neon__purple left col s12" type="submit" name="action">
-              Ingresar <i class="material-icons right">send</i>
-            </button>
-
-            <div class="clearfix"></div>
-          </div>
-        </form>
-      </div>
+      <div class="col-12 ftcAlto input-field ul">
+    <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
+    <div class="input-group">
+      <div class="input-group-text"> <i class="material-icons col-form-label">lock</i></div>
+      <input v-model.trim="pass" type="password" class="form-control validate neon-input neon-input_disabled neon__purple"  id="inputPassword3" placeholder="Pass">
+    </div>
+  </div>
+            <div class="col-12">
+    <button type="submit" class="btn btn-primary neon__purple" name="action">Ingresar <i class="material-icons right">send</i></button>
+  </div>
+    </form>
     </div>
   </div>
 </template>

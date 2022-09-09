@@ -1,58 +1,44 @@
 <template>
   <div>
-    <div class="row formTop">
-      <div class="col l3 m3 s12"></div>
-      <div class="col l6 m6 s12">
-        <form @submit.prevent="validarUsuario">
-          <div class="form card-panel z-depth-5">
-            <h4 class="center neon-sub-line">¡Crear nueva cuenta!</h4>
-            <div class="input-field">
-              <i class="material-icons prefix">email</i>
-              <input
-                v-model.trim="email"
-                type="email"
-                name="email"
-                id="disabled_input"
-                class="validate neon-input neon-input_disabled neon__purple"
-              />
-              <label>Ingrese el email</label>
-            </div>
+ <div class="form card-panel z-depth-5">
+            <h4 class="center neon-sub-line">¡Crear cuenta!</h4>
+    <form class="row formTop" @submit.prevent="validarUsuario">
 
-            <div class="input-field">
-              <i class="material-icons prefix">lock</i>
-              <input
-                v-model.trim="pass1"
-                type="password"
-                name="pass1"
-                id="disabled_input"
-                class="validate neon-input neon-input_disabled neon__purple"
-              />
-              <label>ingrese la contraseña</label>
-            </div>
+ <div class="col-12 ftcAlto input-field">
+    <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
+    <div class="input-group">
+      <div class="input-group-text"><i class="material-icons  col-form-label">email</i></div>
+      <input v-model.trim="email" type="email" name="email" class="form-control validate neon-input neon-input_disabled neon__purple" id="inputEmail3" placeholder="Email">
+    </div>
+  </div>
 
-            <div class="input-field">
-              <i class="neon__purple  neon-input material-icons prefix">vpn_key</i>
-              <input
-                v-model.trim="pass2"
-                type="password"
-                name="pass2"
-                id="disabled_input"
-                class="validate neon-input neon-input_disabled neon__purple"
-              />
-              <label>Confirme la contraseña</label>
-            </div>
-            <p class="right">
+
+      <div class="col-12 ftcAlto input-field">
+    <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
+    <div class="input-group">
+      <div class="input-group-text"> <i class="material-icons  col-form-label">lock</i></div>
+      <input   v-model.trim="pass1" type="password" class="form-control validate neon-input neon-input_disabled neon__purple" name="pass1"  id="inputPassword3" placeholder="Password">
+    </div>
+  </div>
+
+   
+
+         <div class="col-12 ftcAlto">
+    <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
+    <div class="input-group">
+      <div class="input-group-text">  <i class="material-icons prefix col-form-label">vpn_key</i></div>
+      <input   v-model.trim="pass2" type="password" name="pass2" class="form-control validate neon-input neon-input_disabled neon__purple" id="inputPassword3" placeholder="Confirmar Password">
+    </div>
+  </div>
+
+            <div class="col-12 ftcAlto">
+    <button type="submit" class="btn btn-primary neon__purple" name="action">Registrame <i class="material-icons right">send</i></button>
+  </div>
+   <p class="right ftcAlto">
               ¿Tenés cuenta?
-             <router-link to="/login">Ingresar</router-link>
+              <a href="/login" class="modal-trigger">login</a>
             </p>
-            <button class="btn neon__purple left col s12" type="submit" name="action">
-              Registrame <i class="material-icons right">send</i>
-            </button>
-            <div class="clearfix"></div>
-          </div>
-        </form>
-      </div>
-      <div class="col l3 m3 s12"></div>
+    </form>
     </div>
   </div>
 </template>

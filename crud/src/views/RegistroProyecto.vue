@@ -6,7 +6,7 @@
       <router-link class="btn" to="/proyectos">Volver</router-link>
       <form class="col s12" @submit.prevent="registProyectos">
         <div class="row">
-          <div class="input-field col s12">
+          <div class="input-field col-12">
             <input
               id="nombre"
               v-model="project.nombre"
@@ -15,23 +15,24 @@
             />
             <label for="nombre">Nombre Proyecto</label>
           </div>
-          <div class="input-field col s12">
-            <input
+          <div class="input-field col-12">
+            <textarea
               id="descripcion"
               v-model="project.descripcion"
               type="text"
-              class="validate neon-input neon-input_disabled neon__purple"
+              class="validate neon-input neon-input_disabled neon__purple materialize-textarea"
             />
             <label for="descripcion">Descripción</label>
           </div>
-          <div class="input-field col s12">
+          <div class="input-field col-12">
             <input
               id="url"
               v-model="project.url"
               type="text"
               class="validate neon-input neon-input_disabled neon__purple "
+              placeholder="https://"
             />
-            <label for="nombre">url del proyecto</label>
+            <label for="nombre">URL del proyecto</label>
           </div>
           <div>
             <p>
