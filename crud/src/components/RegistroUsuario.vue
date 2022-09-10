@@ -2,9 +2,9 @@
   <div>
  <div class="form card-panel z-depth-5">
             <h4 class="center neon-sub-line">¡Crear cuenta!</h4>
-    <form class="row formTop" @submit.prevent="validarUsuario">
+    <form class="row formTop justify-content-center" @submit.prevent="validarUsuario">
 
- <div class="col-12 ftcAlto input-field">
+ <div class="col-11 ftcAlto input-field">
     <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
     <div class="input-group">
       <div class="input-group-text"><i class="material-icons  col-form-label">email</i></div>
@@ -13,7 +13,7 @@
   </div>
 
 
-      <div class="col-12 ftcAlto input-field">
+      <div class="col-11 ftcAlto input-field mx-2">
     <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
     <div class="input-group">
       <div class="input-group-text"> <i class="material-icons  col-form-label">lock</i></div>
@@ -23,20 +23,20 @@
 
    
 
-         <div class="col-12 ftcAlto">
+         <div class="col-11 ftcAlto mx-2">
     <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
     <div class="input-group">
-      <div class="input-group-text">  <i class="material-icons prefix col-form-label">vpn_key</i></div>
+      <div class="input-group-text">  <i class="material-icons  col-form-label">vpn_key</i></div>
       <input   v-model.trim="pass2" type="password" name="pass2" class="form-control validate neon-input neon-input_disabled neon__purple" id="inputPassword3" placeholder="Confirmar Password">
     </div>
   </div>
 
-            <div class="col-12 ftcAlto">
-    <button type="submit" class="btn btn-primary neon__purple" name="action">Registrame <i class="material-icons right">send</i></button>
+            <div class="col-11 ftcAlto d-block mx-2">
+    <button type="submit" class="btn btn-primary w-100 neon__purple" name="action">Registrame <i class="material-icons right">send</i></button>
   </div>
    <p class="right ftcAlto">
               ¿Tenés cuenta?
-              <a href="/login" class="modal-trigger">login</a>
+              <a @click="$router.push({name:'Login'})  " class="modal-trigger">login</a>
             </p>
     </form>
     </div>

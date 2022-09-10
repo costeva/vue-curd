@@ -3,9 +3,9 @@
  <div class="form card-panel z-depth-5">
           <h5 class="center neon-sub-line">Login</h5>
             <p class="center">¡Ingrese los datos!</p>
-    <form class="row formTop"  @submit.prevent="validarLogin">
+    <form class="row formTop justify-content-center"  @submit.prevent="validarLogin">
 
- <div class="col-12 ftcAlto input-field ul " >
+ <div class="col-11 ftcAlto input-field ul " >
     <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
     <div class="input-group">
       <div class="input-group-text"><i class="material-icons  col-form-label">email</i></div>
@@ -14,15 +14,15 @@
   </div>
 
 
-      <div class="col-12 ftcAlto input-field ul">
+      <div class="col-11 ftcAlto input-field ul">
     <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
     <div class="input-group">
       <div class="input-group-text"> <i class="material-icons col-form-label">lock</i></div>
       <input v-model.trim="pass" type="password" class="form-control validate neon-input neon-input_disabled neon__purple"  id="inputPassword3" placeholder="Pass">
     </div>
   </div>
-            <div class="col-12">
-    <button type="submit" class="btn btn-primary neon__purple" name="action">Ingresar <i class="material-icons right">send</i></button>
+        <div class="col-11 ftcAlto d-block">
+    <button type="submit" class="btn btn-primary w-100 neon__purple" name="action">Ingresar <i class="material-icons right">send</i></button>
   </div>
     </form>
     </div>
